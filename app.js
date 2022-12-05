@@ -12,7 +12,8 @@ app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static("public"));
 
-mongoose.connect("mongodb+srv://ssala:fVueIB2Fhgqd1f6N@cluster0.dcqyldh.mongodb.net/itemsDB?retryWrites=true&w=majority");
+//ADD local or cloud Atlas url here
+mongoose.connect("");
 
 const items = [];
 const workItems = [];
@@ -126,6 +127,6 @@ app.get("/about", function(req, res){
   res.render("about");
 });
 
-app.listen(process.env.port || 3000, function() {
+app.listen(process.env.PORT || 3000, function() {
   console.log("Server started successfully");
 });
